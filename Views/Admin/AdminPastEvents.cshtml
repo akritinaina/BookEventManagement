@@ -1,0 +1,24 @@
+﻿
+
+@model IEnumerable<Book_Reading_Event_Management.Models.EventDetailsModel>
+@using Book_Reading_Event_Management.Models
+@{
+    ViewBag.Title = "AdminPastEvents";
+    //var userEmail = ViewBag.useremail;
+}
+
+<h2>Past Events</h2>
+<h3>@ViewBag.Message</h3>
+<ul>
+    @foreach (EventDetailsModel eventDetails in @Model)
+    {
+        <li>@Html.ActionLink(eventDetails.Title, "ViewBookEvents", new { title = eventDetails.Title })</li>
+    }
+</ul>
+
+
+
+
+
+
+

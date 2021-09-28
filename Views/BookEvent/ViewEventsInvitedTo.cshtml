@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Book_Reading_Event_Management.Models.EventDetailsModel>
+@using Book_Reading_Event_Management.Models 
+@{
+    ViewBag.Title = "ViewEventsInvitedTo";
+    Layout = "~/Views/Shared/_LoggersLayout.cshtml";
+    var user = ViewBag.user;
+}
+
+<h2>Events InvitedTo</h2>
+<br />
+<br />
+<h3>@ViewBag.Message</h3>
+<ul>
+    @foreach (EventDetailsModel eventDetails in @Model)
+    {
+        <li>@Html.ActionLink(eventDetails.Title, "ViewBookEvents", new { title = eventDetails.Title,email=user })</li>
+    }
+</ul>
+
+

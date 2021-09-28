@@ -1,0 +1,57 @@
+﻿@model Book_Reading_Event_Management.Models.MyViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home Page</h2>
+<style>
+
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+
+
+<h2>List of All events</h2>
+
+<div class="row">
+    <div class="column">
+        <h2>Past Events</h2>
+        <ul>
+
+            @foreach (var item in Model.list1)
+            {
+                
+                 <li>@Html.ActionLink(item.Title, "ViewBookEvents", new { title = item.Title })</li>
+                
+            }
+
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Upcomming Events</h2>
+        <ul>
+            @foreach (var item in Model.list2)
+            {
+                
+                    <li>@Html.ActionLink(item.Title, "ViewBookEvents", new { title = item.Title })</li>
+                
+            }
+        </ul>
+    </div>
+</div>
+
